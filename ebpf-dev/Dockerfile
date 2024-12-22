@@ -66,6 +66,6 @@ CMD ["zsh"]
 # Build the image
 # docker build -t neevek/ebpf-dev .
 # Run a container from the image
-# docker run -t -d -v /home/neevek/dev/ebpf-dev/data:/root/data --name ebpf-dev1 neevek/ebpf-dev
+# docker run -t -d -v /home/neevek/dev/ebpf-dev/data:/root/data --device=/dev/kfd --device=/dev/dri --group-add video --security-opt seccomp=unconfined --name ebpf-dev1 neevek/ebpf-dev
 # Login to the container
 # docker exec -it ebpf-dev1 zsh
